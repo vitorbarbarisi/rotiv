@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rotiv"
+version = "0.1.0"
+description = "A LangGraph-based chatbot application"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "langgraph",
+    "langchain",
+    "python-dotenv",
+    "ipython",
+    "typing-extensions",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "black",
+    "flake8",
+]
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"] 
